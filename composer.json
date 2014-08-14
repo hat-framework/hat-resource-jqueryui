@@ -1,9 +1,9 @@
 {
-    "name": "hatframework/resources/jqueryui",
+    "name": "hatframework/hat-resource-jqueryui",
     "type": "library",
     "description": "",
     "keywords": [],
-    "homepage": "https://github.com/hat-framework/resources/jqueryui",
+    "homepage": "https://github.com/hat-framework/hat-resource-jqueryui",
     "license": "MIT",
     "authors": [
         {
