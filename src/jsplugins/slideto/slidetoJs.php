@@ -12,7 +12,7 @@ class slidetoJs extends JsPlugin{
     
     public function init(){
         $this->LoadJsPlugin('jqueryui/jqueryui', 'jui');
-        $this->Html->LoadJs("$this->url/js/jquery.slideto.min");
+        $this->Html->LoadBowerComponent("jQuery-slideto/jquery.slideto");
     }
     
     public function draw($id, $id_src){
@@ -23,5 +23,3 @@ class slidetoJs extends JsPlugin{
         ");
     }
 }
-
-?>

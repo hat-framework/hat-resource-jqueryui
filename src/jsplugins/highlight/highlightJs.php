@@ -12,7 +12,7 @@ class highlightJs extends JsPlugin{
     
     public function init(){
         $this->LoadJsPlugin('jqueryui/jqueryui', 'jui');
-        $this->Html->LoadJs("$this->url/js/jquery.highlight-3");
+        $this->Html->LoadBowerComponent("jquery-highlight/jquery.highlight");
         $this->Html->LoadCss('plugins/jqueryui/highlight');
         $this->LoadClassFromPlugin('search/alg/StoppingWords', 'alg');
         $this->LoadClassFromPlugin('search/alg/OrengoStemmer', 'os');
@@ -35,5 +35,3 @@ class highlightJs extends JsPlugin{
         
     }
 }
-
-?>

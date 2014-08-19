@@ -2,11 +2,7 @@
 
 use classes\Classes\JsPlugin;
 class jqueryuiJs extends JsPlugin{
-    
-    public $file_sample = "sample.php";
-    public $defaulTheme = "smoothness";
-    private $theme       = array('redmond','smoothness');
-  
+      
     static private $instance;
     public static function getInstanceOf($plugin){
         $class_name = __CLASS__;
@@ -15,16 +11,8 @@ class jqueryuiJs extends JsPlugin{
     } 
     
     public function init(){
-        $this->Html->LoadJs("$this->url/js/jquery-ui.min");
+        $this->Html->LoadBowerComponent("jquery-ui/jquery-ui.min");
         $this->Html->loadCss("plugins/jqueryui/jqueryui/jquery-ui.custom");
-        //$this->Html->loadExternCss("$this->url/css/$this->defaulTheme/jquery-ui.custom");
-    }
-    
-    public function setTheme($theme){
-        if(in_array($theme, $this->theme)){
-            $this->defaulTheme = $theme;
-            $this->init();
-        }
     }
     
     public function dialog($name = 'dialog', $link = "", $buttons = array(), $width = 600){
@@ -100,5 +88,3 @@ class jqueryuiJs extends JsPlugin{
             </p>';
     }
 }
-
-?>

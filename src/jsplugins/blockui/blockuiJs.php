@@ -14,16 +14,14 @@ class blockuiJs extends JsPlugin{
     
     public function init(){
         static $css = '<style>.closemsg{color:white; font-size:12px; float:right; cursor: Pointer;}</style>';
-        $this->Html->LoadJs("$this->url/js/jquery.blockUI");
-        $this->Html->LoadJs("$this->url/js/blockui");
-        $this->Html->LoadExternCss("$this->url/css/blockui");
+        $this->Html->LoadBowerComponent("blockUI/jquery.blockUI");
+        $this->Html->LoadBowerComponent('hatframework-hatjs-form/jqueryui/blockui');
         $this->Html->LoadCss("plugins/jqueryui/blockui");
         $this->Html->addSytle($css);
         $css = "";
     }
     
     public function getLoadingImage(){
-        $img = $this->Html->getImageIfExists('loading.gif');
-        return ($img == "")?"$this->url/busy.gif":$img;
+        return $this->Html->getImageIfExists('loading.gif');
     }
 }

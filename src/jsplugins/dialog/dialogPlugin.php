@@ -4,11 +4,9 @@ class dialogPlugin extends PluginComponent{
     
     public $file_sample = "sample.php";
     public function load(){
-
         $this->Html->LoadCssFromPlugins("ui-dialog", $this->base_url . "dialog.css");
         $this->Js->LoadPlugin("jqueryui", "jqueryui", "jqueryui");
         $this->Js->jqueryui->load();
-        
     }
     
     public function draw($title, $msg, $link_msg){
@@ -30,5 +28,3 @@ class dialogPlugin extends PluginComponent{
     }
     
 }
-
-?>
