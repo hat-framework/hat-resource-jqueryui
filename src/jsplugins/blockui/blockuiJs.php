@@ -13,7 +13,7 @@ class blockuiJs extends JsPlugin{
     } 
     
     public function init(){
-        static $css = '<style>.closemsg{color:white; font-size:12px; float:right; cursor: Pointer;}</style>';
+        static $css = '.closemsg{color:white; font-size:12px; float:right; cursor: Pointer;}';
         $this->Html->LoadBowerComponent("blockUI/jquery.blockUI");
         $this->Html->LoadBowerComponent('hatframework-hatjs-form/jqueryui/blockui');
         $this->Html->LoadCss("plugins/jqueryui/blockui");
