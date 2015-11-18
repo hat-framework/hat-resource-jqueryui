@@ -11,8 +11,9 @@ class jqueryuiJs extends JsPlugin{
     } 
     
     public function init(){
-        $this->Html->LoadBowerComponent("jquery-ui/jquery-ui.min");
-        $this->Html->loadCss("plugins/jqueryui/jqueryui/jquery-ui.custom");
+        $this->Html->LoadBowerComponent("jquery-ui/jquery-ui.min", array(
+            'jquery-ui-bootstrap/css/custom-theme/jquery-ui-1.10.3.custom'
+        ));
     }
     
     public function dialog($name = 'dialog', $link = "", $buttons = array(), $width = 600){
@@ -38,7 +39,9 @@ class jqueryuiJs extends JsPlugin{
     }
     
     public function datepicker($name = "datepicker"){
-        $this->Html->LoadJQueryFunction("$('#$name').datepicker({inline: true});");
+        $this->Html->LoadJQueryFunction("
+            $('#$name').datepicker({changeMonth: true, changeYear: true, dateFormat:'dd/mm/yy', minDate: '01/01/1900', showButtonPanel: true});
+        ");
     }
     
     public function slider($name = "slider", $v1 = 17, $v2 = 67){
