@@ -16,7 +16,11 @@ class tabsJs extends JsPlugin{
     
     public function init($name = ""){    
         $this->LoadJsPlugin("jqueryui/jqueryui", 'jui');
-        $this->Html->LoadJQueryFunction("$('.jqtabs').tabs();");
+        $this->Html->LoadJQueryFunction("$('.jqtabs').tabs({
+            activate: function(event, ui) {
+                window.location.hash = ui.newPanel.attr('id');
+            }
+        });");
     }
     
     public function draw($tabs){
@@ -24,8 +28,10 @@ class tabsJs extends JsPlugin{
         $content = "";
         echo "<div class='jqtabs'><ul class='nav tab-menu nav-tabs'>";
         foreach($tabs as $name => $value){
-            echo "<li><a href='#tabs-$i'>$name</a></li>";
-            $content .= "<div id='tabs-$i'>$value</div>";
+            $id   = (is_array($value))?$value['tabname']:"tabs_$i";
+            $cont = (is_array($value))?$value['content']:$value;
+            echo "<li><a href='#$id'>$name</a></li>";
+            $content .= "<div id='$id'>$cont</div>";
             $i++;
         }
         echo "</ul> $content </div>";
