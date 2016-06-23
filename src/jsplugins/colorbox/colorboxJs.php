@@ -13,7 +13,7 @@ class colorboxJs extends JsPlugin {
     public function init(){
         $this->Html->LoadBowerComponent('/jquery-colorbox/jquery.colorbox-min');
         $this->Html->LoadBowerComponent('/hatframework-hatjs-form/jqueryui/colorbox_resize');
-        $this->Html->loadCss('plugins/jqueryui/colorbox');
+        //$this->Html->loadCss('plugins/jqueryui/colorbox');
     }
     
     private $selector_list = array();
@@ -94,5 +94,3 @@ class colorboxJs extends JsPlugin {
     } 
 
 }
-
-?>
